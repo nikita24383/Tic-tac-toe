@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Tic tac toe</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<section>
+		<div>
+			<h1>TIC TAC TOE</h1>
+		</div>
+	</section>
+
+	<section>
+		<div id="game">
+			<table>
+				<tr>
+					<td class="box" id="box1"></td>
+					<td class="box" id="box2"></td>
+					<td class="box" id="box3"></td>
+				</tr>
+				<tr>
+					<td class="box" id="box4"></td>
+					<td class="box" id="box5"></td>
+					<td class="box" id="box6"></td>
+				</tr>
+				<tr>
+					<td class="box" id="box7"></td>
+					<td class="box" id="box8"></td>
+					<td class="box" id="box9"></td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+	<section id="select">
+		<div id="chose">
+			Choose:
+			<button onclick="choose('O')" type="O">O</button>
+			<button onclick="choose('X')" type="X">X</button>
+		</div>
+	</section>
+
+	<section id="finalResult">
+		<div id="popup">
+			<p id="result"></p><br>
+			<button onclick="location.reload()">Play again</button>
+		</div>
+	</section>
+
+<script src="work.js"></script>
+
+</body>
+</html>

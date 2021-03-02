@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background-color: #cddaef;
+	background-image: url("bg1.png");
+}
+
+section{
+	text-align: center;
+	margin: 50px;
+}
+
+h1{
+	font-size: 60px;
+}
+
+#game{
+	pointer-events: none;
+	padding: 2%;
+	margin: 5% 40%;
+}
+
+#select, #finalResult{
+	padding: 2%;
+	margin: -4% 32%;
+}
+
+table, tr, td{
+	background-color: #e5eef1;
+	padding: 30px;
+	border: 1px solid #000000;
+	border-radius: 25px;
+	border-collapse: collapse;
+	font-family: 'Dancing Script', cursive;
+}
+
+table, td{
+	table-layout: fixed; 
+	width: 30px;
+	height: 30px;
+}
+
+td:hover{
+	cursor: pointer;
+}
+
+td{
+	max-width: 30px;
+}
+
+table{
+	border-collapse: collapse;
+    border-radius: 30px;
+    border-style: hidden; /* hide standard table (collapsed) border */
+    box-shadow: 0 0 20px 10px #666; 
+}
+
+#chose, #popup{
+	text-align: center; 
+	width: 500px;
+	padding: 50px;
+	font-size: 40px;
+	/*background: #b9c8e2;*/
+}
+
+button:hover {
+	background: #b9c8e2fe;
+}
+
+button{
+	font-size: 40px;
+	background: #b9c8e236;
+	color: #000000;
+	padding:10px;
+	cursor: pointer;
+}
+
+#finalResult{
+	display: none;
+}
