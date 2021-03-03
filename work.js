@@ -1,4 +1,4 @@
-// 
+// stores all the places
 let box = document.getElementsByClassName("box");
 let boxes = [...box];
 
@@ -11,6 +11,7 @@ var os = [];
 // all places
 var pos = ["box1", "box2","box3", "box4", "box5", "box6", "box7", "box8", "box9"];
 
+// to store the option selected by user
 function choose(opt){
 	document.getElementById("select").style.display = "none";
 	document.getElementById("game").style.pointerEvents = "auto";
@@ -28,42 +29,50 @@ var selectedPlaces = [];
 
 document.body.onload = startGame();
 
+// main function
 function startGame(){
 
 	if(pos.includes(this.id)){
+
+		// tick a box for user
 		document.getElementById(this.id).innerHTML = user;
 		document.getElementById(this.id).disable = "yes";
 		var audio = new Audio("click.mp3"); 
         audio.play(); 
+
+        // stores ticked box in an array
 		if (user == "X") {
 			xs.push(this.id);
 		}else{
 			os.push(this.id);
 		}
 		
+		// remove ticked place from an array
 		var index = pos.indexOf(this.id);
 		if (index > -1) {
 			pos.splice(index, 1);
 			var res = Result();
 			if (res == 1){
-				console.log("in if");
 				setTimeout(() => 500);
 			}else {
-				console.log("in else");
 				setTimeout(() => compPlace(),500);
 			}
 		}
 	}
 }
 
+// to compute computer's move
 function compPlace(){
 
 	var position = randomPlace();
 
+	// remove ticked place from an array
 	var index1 = pos.indexOf(position);
 	if (index1 > -1) {
 		document.getElementById(position).innerHTML = comp;
 		document.getElementById(position).disable = "yes";
+
+		// stores ticked box in an array
 		if (comp == "X") {
 			xs.push(position);
 		}else{
@@ -94,6 +103,7 @@ function randomPlace(){
 	return item;
 }
 
+// funtion for final message display
 function finalDisplay(){
 	document.getElementById("finalResult").style.display = "block";
 	document.getElementById("game").style.pointerEvents = "none";
@@ -101,8 +111,8 @@ function finalDisplay(){
 
 // calculate result
 function Result(){
-	console.log("xs:",xs,"os:",os);
 
+	// checks all the possibilities for the result
 	if ((xs.includes("box1")&&xs.includes("box2")&&xs.includes("box3")) || 
 		(xs.includes("box4")&&xs.includes("box5")&&xs.includes("box6")) || 
 		(xs.includes("box7")&&xs.includes("box8")&&xs.includes("box9")) || 
@@ -137,8 +147,9 @@ function Result(){
 				finalDisplay();
 				return 1;
 			}
-	}else if (pos.length === 0){
+	}else if (pos.length == 0){
 		document.getElementById("result").innerHTML = "Better luck next time !!!";
-
+		finalDisplay();
+		return 1;
 	}
 }
